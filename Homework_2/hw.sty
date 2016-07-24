@@ -1,0 +1,90 @@
+\newtheoremstyle{myplain}      {10pt}{10pt}{\itshape}{}{\scshape}{.}{.5em}{}
+\newtheoremstyle{mydefinition} {10pt}{10pt}{}{}{\scshape}{.}{.5em}{}
+\newtheoremstyle{myremark}     {10pt}{10pt}{}{}{\scshape}{.}{.5em}{}
+\newtheoremstyle{myanswer}     {10pt}{10pt}{}{23pt}{\scshape}{}{.5em}{\thmname{#1}\thmnote{ (#3)}}
+
+
+\renewcommand{\qedsymbol}{\leavevmode
+  \hbox to.77778em{%
+  \hfil\vrule
+  \vbox to.875em{\hrule width.35em\vfil\hrule}%
+  \vrule\hfil}}
+
+\newcounter{lecture}
+\theoremstyle{myplain}
+\newtheorem{theorem}{Theorem}[]
+\newtheorem{lemma}         [theorem]{Lemma}
+\newtheorem{proposition}   [theorem]{Proposition}
+\newtheorem{corollary}     [theorem]{Corollary}
+\newtheorem{claim}         [theorem]{Claim}
+\newtheorem{fact}          [theorem]{Fact}
+
+\theoremstyle{mydefinition}
+\newtheorem{definition}    [theorem]{Definition}
+\newtheorem{example}       [theorem]{Example}
+\newtheorem{assumption}    [theorem]{Assumption}
+\newtheorem{openproblem}   [theorem]{Open Problem}
+\newtheorem{notation}      [theorem]{Notation}
+
+\newtheorem{problem}       [theorem]{Problem}
+
+%\theoremstyle{myremark}
+\newtheorem{remark}        [theorem]{Remark}
+\newtheorem{conjecture}    [theorem]{Conjecture}
+
+\theoremstyle{myanswer}
+\newtheorem{answer}        {Answer}
+
+\numberwithin{equation} {lecture}
+\numberwithin{figure}   {lecture}
+\numberwithin{table}    {lecture}
+
+\renewcommand{\fnum@figure}{\textsc{Figure~\thefigure}}
+\renewcommand{\fnum@table}{\textsc{Table~\thetable}}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thepage}{\arabic{page}}
+
+
+
+
+
+\newtheoremstyle{theoremd}% name of the style to be used
+{}% measure of space to leave above the theorem. E.g.: 3pt
+{}% measure of space to leave below the theorem. E.g.: 3pt
+{\em}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\bf}% name of head font
+{.}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{\addtocounter{thm}{-1} #2$^\prime$}\thmnote{\textnormal{ (#3)}}}
+
+
+
+
+
+
+\newcommand{\makeheader}[4]{
+%\setcounter{lecture}{#3}
+\noindent
+\begin{minipage}[t]{9cm}
+\flushleft
+University of California, Los Angeles\\
+CS 181 Formal Languages \& Automata Theory\\
+\end{minipage}
+\hfill
+\begin{minipage}[t]{7cm}
+\flushright
+{Student:} {#1}\\
+{UID:} {#2}\\
+\end{minipage}
+\hfill
+
+\vspace{1.5cm}
+\begin{center}
+{\LARGE \bf #4}
+\end{center}
+\vspace{.5cm}
+\thispagestyle{empty}
+}
+
